@@ -1,3 +1,5 @@
+from validator import validate_email, validate_snils
+
 # tests/test_validator.py
 def test_validate_email():
     assert validate_email("test@example.com") == True
@@ -7,7 +9,7 @@ def test_validate_email():
 def test_validate_snils():
     # Валидные СНИЛС (рассчитаны по алгоритму)
     assert validate_snils("11223344595") == True
-    assert validate_snils("001-001-999 32") == True  # с форматированием
+    assert validate_snils("001-001-999 65") == True  # с форматированием
     
     # Невалидные: неверный формат
     assert validate_snils("123") == False              # слишком короткий
